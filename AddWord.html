@@ -1,0 +1,24 @@
+{%  extends "HomePage.html" %}
+
+{% block content %}
+
+<div class="sidenav">
+  <a href="/">Home</a>
+  <a href="/anagram.html">Anagram </a>
+</div>
+
+<div class="content">
+
+    <h2 style="text-align:center" > Add word Page </h2>
+
+    <form method="Post" action="/AddWord.html" style="text-align: center;" >
+        <input name="add_word" type="text" size="25" pattern="[a-zA-Z]+.{2,}" align="center" title="Alphabet characters only">
+        <input type="submit" value="Add Word" name="add_button" />
+        <br />
+        <br />
+    </form>
+
+</div>
+
+
+{% endblock %}

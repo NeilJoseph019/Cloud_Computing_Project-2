@@ -1,0 +1,22 @@
+{%  extends "HomePage.html" %}
+
+{% block content %}
+
+<div class="sidenav">
+  <a href="/">Home</a>
+  <a href="/anagram.html">Anagram </a>
+</div>
+
+<div class="content">
+
+    <h2 style="text-align:center" > File Upload Page </h2>
+
+    <form action="/AddFile.html" method="post" style="text-align:center" >
+        Select a file to upload
+        <input type="file" name="uploadFile">
+        <input type="submit" name="UploadButton" value="Upload">
+    </form>
+
+</div>
+
+{% endblock %}

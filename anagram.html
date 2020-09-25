@@ -1,0 +1,63 @@
+{%  extends "HomePage.html" %}
+
+{% block content %}
+
+<div class="content" style="text-align:center">
+
+    <h2 style="text-align:center" > Anagram Page </h2>
+
+
+    <button  style="height:30px; width:150px"  onclick="location.href='/AddWord.html'" type="button"> Add Word </button>
+    <br/>
+    <br/>
+
+    <button  style="height:30px; width:150px"  onclick="location.href='/AddFile.html'" type="button"> Upload File </button>
+    <br/>
+    <br/>
+
+    <button  style="height:30px; width:150px"  onclick="location.href='/SubAnagram.html'" type="button"> Sub Anagram </button>
+    <br/>
+    <br/>
+
+    <form method="get" style="text-align: center;">
+        <input name="input_search_word" type="text"  pattern="[a-zA-Z]*" align="center" title="Alphabet characters only">
+        <input type="submit" value="Search Word" name="search_button" />
+        <input type="submit" value="Cancel" name="search_button" />
+        <br />
+        <br />
+    </form>
+
+
+    <table align="center">
+
+        <tr>
+            <th colspan="6"  style="text-align: center;">Results</th>
+        </tr>
+        <tr>
+            <th >Word Key </th>
+            <th >Inputed Anagrams Words</th>
+            <th >Total Counts</th>
+            <th >Anagram Length</th>
+
+        </tr>
+
+        <tbody>
+
+            {% for word in query %}
+
+                <tr>
+                    <td >   {{word.anagram_key}}         </td>
+                    <td >   {{word.words}}               </td>
+                    <td >   {{word.anagram_count }}      </td>
+                    <td >   {{word.word_length }}        </td>
+
+                </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}
